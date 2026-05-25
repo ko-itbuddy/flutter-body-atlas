@@ -259,20 +259,27 @@
               fill="#BDBDBD" id="pectoralis_major_costal_l"/>
         <path d="M 192.22118154149985,291.0000489566543 C 192.88732221385203,294.38450565570685 193.41298033831546,297.80249941159036 193.717,301.125 C 198.117,305.325 209.405,309.881 214.5,311.634 C 223.777,314.207 235.149,315.195 248.75,313.384 C 268.80481993251476,310.71365712855106 278.9520518656692,301.96095807524057 283.98763655613766,290.99994569751175 L 192.22118154149985,291.0000489566543 Z"
               fill="#BDBDBD" id="pectoralis_major_costal_r"/>
-        <!-- Serratus anterior (전거근, lateral thorax saw-tooth) -->
-        <path d="M430 340 L475 340 L470 370 L478 380 L470 395 L478 410 L470 425 L478 440 L470 450 L430 450 Z"
+        <!--
+          Bezier-curved subdivisions (2026-05-26 health-customizations
+          v0.1.4+4). Polygon approximation replaced with QuadraticBezier/
+          CubicBezier for consistency with pec bezier-accurate slicing
+          (v0.1.4+2). Brachialis y range shortened to 305-350 + serratus
+          y range shifted to 355-460 to avoid lateral-thorax overlap.
+        -->
+        <!-- Serratus anterior (전거근, smooth wave digitations y 355-460) -->
+        <path d="M430 355 Q460 355 465 358 Q468 370 460 375 Q456 380 468 385 Q472 395 460 400 Q456 408 468 415 Q472 425 460 430 Q456 440 468 445 Q472 455 460 458 Q445 460 430 460 Z"
               fill="#BDBDBD" id="serratus_anterior_l"/>
-        <path d="M157 340 L112 340 L117 370 L109 380 L117 395 L109 410 L117 425 L109 440 L117 450 L157 450 Z"
+        <path d="M157 355 Q127 355 122 358 Q119 370 127 375 Q131 380 119 385 Q115 395 127 400 Q131 408 119 415 Q115 425 127 430 Q131 440 119 445 Q115 455 127 458 Q142 460 157 460 Z"
               fill="#BDBDBD" id="serratus_anterior_r"/>
-        <!-- Brachialis (상완근, lateral to biceps long head) -->
-        <path d="M430 305 L445 310 L448 350 L443 400 L432 415 L425 380 L424 340 Z"
+        <!-- Brachialis (상완근, narrow strip y 305-350, biceps long head medial offset) -->
+        <path d="M432 305 C438 305 444 312 446 322 C448 333 446 343 444 348 C442 351 436 351 430 348 C425 343 423 333 422 325 C421 315 422 308 432 305 Z"
               fill="#BDBDBD" id="brachialis_l"/>
-        <path d="M157 305 L142 310 L139 350 L144 400 L155 415 L162 380 L163 340 Z"
+        <path d="M155 305 C149 305 143 312 141 322 C139 333 141 343 143 348 C145 351 151 351 157 348 C162 343 164 333 165 325 C166 315 165 308 155 305 Z"
               fill="#BDBDBD" id="brachialis_r"/>
-        <!-- Iliopsoas (장요근, inner pelvis V-shape) -->
-        <path d="M297 580 L325 590 L335 650 L320 700 L300 680 Z"
+        <!-- Iliopsoas (장요근, smooth teardrop V-shape, pelvis inner edge) -->
+        <path d="M297 580 Q310 582 325 592 Q333 620 335 648 Q332 678 320 695 Q305 692 300 678 Q296 640 297 580 Z"
               fill="#BDBDBD" id="iliopsoas_l"/>
-        <path d="M290 580 L262 590 L252 650 L267 700 L287 680 Z"
+        <path d="M290 580 Q277 582 262 592 Q254 620 252 648 Q255 678 267 695 Q282 692 287 678 Q291 640 290 580 Z"
               fill="#BDBDBD" id="iliopsoas_r"/>
 
     </g>
