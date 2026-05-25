@@ -113,6 +113,19 @@ enum Muscle implements AtlasElement {
   infraspinatusLeft('infraspinatus_l'),
   latissimusDorsiRight('latissimus_dorsi_r'),
   latissimusDorsiLeft('latissimus_dorsi_l'),
+  // back layer subdivisions (2026-05-26 health-customizations v0.1.4+3).
+  latissimusDorsiUpperRight('latissimus_dorsi_upper_r'),
+  latissimusDorsiUpperLeft('latissimus_dorsi_upper_l'),
+  latissimusDorsiLowerRight('latissimus_dorsi_lower_r'),
+  latissimusDorsiLowerLeft('latissimus_dorsi_lower_l'),
+  teresMajorRight('teres_major_r'),
+  teresMajorLeft('teres_major_l'),
+  // rotator cuff additions (supraspinatus + teres_minor; subscapularis
+  // not added — not visible in posterior 2D view).
+  supraspinatusRight('supraspinatus_r'),
+  supraspinatusLeft('supraspinatus_l'),
+  teresMinorRight('teres_minor_r'),
+  teresMinorLeft('teres_minor_l'),
 
   // shoulders / traps / delts
   lateralDeltoidRight('lateral_deltoid_r'),
@@ -1019,6 +1032,81 @@ abstract final class MuscleCatalog {
       group: .back,
       side: .left,
       aliases: <String>['lats', 'lat'],
+    ),
+    // Latissimus dorsi upper/lower split (2026-05-26 v0.1.4+3).
+    MuscleInfo(
+      muscle: .latissimusDorsiUpperRight,
+      displayName: 'Latissimus Dorsi (Upper) — Right',
+      group: .back,
+      side: .right,
+      aliases: <String>['upper lats', 'upper back'],
+    ),
+    MuscleInfo(
+      muscle: .latissimusDorsiUpperLeft,
+      displayName: 'Latissimus Dorsi (Upper) — Left',
+      group: .back,
+      side: .left,
+      aliases: <String>['upper lats', 'upper back'],
+    ),
+    MuscleInfo(
+      muscle: .latissimusDorsiLowerRight,
+      displayName: 'Latissimus Dorsi (Lower) — Right',
+      group: .back,
+      side: .right,
+      aliases: <String>['lower lats', 'lower back'],
+    ),
+    MuscleInfo(
+      muscle: .latissimusDorsiLowerLeft,
+      displayName: 'Latissimus Dorsi (Lower) — Left',
+      group: .back,
+      side: .left,
+      aliases: <String>['lower lats', 'lower back'],
+    ),
+    // Teres major — "lats little helper" (back layer).
+    MuscleInfo(
+      muscle: .teresMajorRight,
+      displayName: 'Teres Major — Right',
+      group: .back,
+      side: .right,
+      aliases: <String>['teres major', 'lats helper'],
+    ),
+    MuscleInfo(
+      muscle: .teresMajorLeft,
+      displayName: 'Teres Major — Left',
+      group: .back,
+      side: .left,
+      aliases: <String>['teres major', 'lats helper'],
+    ),
+    // Rotator cuff additions — supraspinatus + teres minor.
+    // (infraspinatus already exists above; subscapularis not visible in
+    // posterior view.)
+    MuscleInfo(
+      muscle: .supraspinatusRight,
+      displayName: 'Supraspinatus — Right',
+      group: .back,
+      side: .right,
+      aliases: <String>['rotator cuff', 'supraspinatus'],
+    ),
+    MuscleInfo(
+      muscle: .supraspinatusLeft,
+      displayName: 'Supraspinatus — Left',
+      group: .back,
+      side: .left,
+      aliases: <String>['rotator cuff', 'supraspinatus'],
+    ),
+    MuscleInfo(
+      muscle: .teresMinorRight,
+      displayName: 'Teres Minor — Right',
+      group: .back,
+      side: .right,
+      aliases: <String>['rotator cuff', 'teres minor'],
+    ),
+    MuscleInfo(
+      muscle: .teresMinorLeft,
+      displayName: 'Teres Minor — Left',
+      group: .back,
+      side: .left,
+      aliases: <String>['rotator cuff', 'teres minor'],
     ),
   ];
 
