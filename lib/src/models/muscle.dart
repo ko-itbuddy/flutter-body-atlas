@@ -131,6 +131,22 @@ enum Muscle implements AtlasElement {
   // chest
   pectoralisMajorLeft('pectoralis_major_l'),
   pectoralisMajorRight('pectoralis_major_r'),
+  // chest — 3-head subdivisions (2026-05-26 health-customizations)
+  pectoralisMajorClavicularLeft('pectoralis_major_clavicular_l'),
+  pectoralisMajorClavicularRight('pectoralis_major_clavicular_r'),
+  pectoralisMajorSternalLeft('pectoralis_major_sternal_l'),
+  pectoralisMajorSternalRight('pectoralis_major_sternal_r'),
+  pectoralisMajorCostalLeft('pectoralis_major_costal_l'),
+  pectoralisMajorCostalRight('pectoralis_major_costal_r'),
+  // chest / lateral thorax — serratus anterior
+  serratusAnteriorLeft('serratus_anterior_l'),
+  serratusAnteriorRight('serratus_anterior_r'),
+  // arms — brachialis (deep elbow flexor, under biceps)
+  brachialisLeft('brachialis_l'),
+  brachialisRight('brachialis_r'),
+  // legs / hip flexors — iliopsoas
+  iliopsoasLeft('iliopsoas_l'),
+  iliopsoasRight('iliopsoas_r'),
 
   // adductors
   adductorMagnusLeft('adductor_magnus_l'),
@@ -457,6 +473,22 @@ abstract final class MuscleCatalog {
       group: .legs,
       side: .right,
       aliases: <String>['quad', 'quadriceps'],
+    ),
+    // Iliopsoas — hip flexor crossing pelvis (2026-05-26
+    // health-customizations).
+    MuscleInfo(
+      muscle: .iliopsoasLeft,
+      displayName: 'Iliopsoas — Left',
+      group: .legs,
+      side: .left,
+      aliases: <String>['hip flexor', 'iliopsoas', 'psoas'],
+    ),
+    MuscleInfo(
+      muscle: .iliopsoasRight,
+      displayName: 'Iliopsoas — Right',
+      group: .legs,
+      side: .right,
+      aliases: <String>['hip flexor', 'iliopsoas', 'psoas'],
     ),
   ];
 
@@ -910,6 +942,22 @@ abstract final class MuscleCatalog {
       side: .right,
       aliases: <String>['biceps'],
     ),
+    // Brachialis — deep elbow flexor under biceps brachii
+    // (2026-05-26 health-customizations).
+    MuscleInfo(
+      muscle: .brachialisLeft,
+      displayName: 'Brachialis — Left',
+      group: .arms,
+      side: .left,
+      aliases: <String>['brachialis', 'deep elbow flexor'],
+    ),
+    MuscleInfo(
+      muscle: .brachialisRight,
+      displayName: 'Brachialis — Right',
+      group: .arms,
+      side: .right,
+      aliases: <String>['brachialis', 'deep elbow flexor'],
+    ),
   ];
 
   static const neck = <MuscleInfo>[
@@ -1075,6 +1123,64 @@ abstract final class MuscleCatalog {
       group: .chest,
       side: .right,
       aliases: <String>['pecs', 'chest'],
+    ),
+    // 3-head subdivisions (2026-05-26 health-customizations).
+    MuscleInfo(
+      muscle: .pectoralisMajorClavicularLeft,
+      displayName: 'Pectoralis Major (Clavicular) — Left',
+      group: .chest,
+      side: .left,
+      aliases: <String>['upper chest', 'upper pec', 'clavicular pec'],
+    ),
+    MuscleInfo(
+      muscle: .pectoralisMajorClavicularRight,
+      displayName: 'Pectoralis Major (Clavicular) — Right',
+      group: .chest,
+      side: .right,
+      aliases: <String>['upper chest', 'upper pec', 'clavicular pec'],
+    ),
+    MuscleInfo(
+      muscle: .pectoralisMajorSternalLeft,
+      displayName: 'Pectoralis Major (Sternal) — Left',
+      group: .chest,
+      side: .left,
+      aliases: <String>['mid chest', 'sternal pec'],
+    ),
+    MuscleInfo(
+      muscle: .pectoralisMajorSternalRight,
+      displayName: 'Pectoralis Major (Sternal) — Right',
+      group: .chest,
+      side: .right,
+      aliases: <String>['mid chest', 'sternal pec'],
+    ),
+    MuscleInfo(
+      muscle: .pectoralisMajorCostalLeft,
+      displayName: 'Pectoralis Major (Costal) — Left',
+      group: .chest,
+      side: .left,
+      aliases: <String>['lower chest', 'costal pec'],
+    ),
+    MuscleInfo(
+      muscle: .pectoralisMajorCostalRight,
+      displayName: 'Pectoralis Major (Costal) — Right',
+      group: .chest,
+      side: .right,
+      aliases: <String>['lower chest', 'costal pec'],
+    ),
+    // Serratus anterior — lateral thorax, "boxer's muscle".
+    MuscleInfo(
+      muscle: .serratusAnteriorLeft,
+      displayName: 'Serratus Anterior — Left',
+      group: .chest,
+      side: .left,
+      aliases: <String>['serratus', "boxer's muscle"],
+    ),
+    MuscleInfo(
+      muscle: .serratusAnteriorRight,
+      displayName: 'Serratus Anterior — Right',
+      group: .chest,
+      side: .right,
+      aliases: <String>['serratus', "boxer's muscle"],
     ),
   ];
 
