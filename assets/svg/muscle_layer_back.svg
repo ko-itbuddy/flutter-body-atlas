@@ -187,6 +187,20 @@
               fill="#BDBDBD" id="teres_minor_r"/>
         <path d="M 192 245 Q 172 248 155 265 L 157 270 Q 172 268 192 268 Z"
               fill="#BDBDBD" id="teres_minor_l"/>
+        <!--
+          Erector spinae (척주기립근, 2026-05-26 health-customizations
+          v0.1.4+6). Long paraspinal strip along the lumbar/sacral
+          spine — thoracic portion is covered by trapezius_lower so
+          this path only exposes the visible lumbar-sacral region
+          (y 445-720). Width narrows superiorly (x 280-296 right /
+          299-315 left at lumbar top) and widens slightly toward the
+          sacrum (lateral edge x 270/325 at y=720). Polygon prototype;
+          anatomic-grade Inkscape refinement deferred.
+        -->
+        <path d="M 280 445 L 296 445 L 296 720 L 270 720 Z"
+              fill="#BDBDBD" id="erector_spinae_r"/>
+        <path d="M 299 445 L 315 445 L 325 720 L 299 720 Z"
+              fill="#BDBDBD" id="erector_spinae_l"/>
     </g>
 
     <g id="shoulders">

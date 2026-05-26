@@ -126,6 +126,9 @@ enum Muscle implements AtlasElement {
   supraspinatusLeft('supraspinatus_l'),
   teresMinorRight('teres_minor_r'),
   teresMinorLeft('teres_minor_l'),
+  // Paraspinal trunk extensor (2026-05-26 health-customizations v0.1.4+6).
+  erectorSpinaeRight('erector_spinae_r'),
+  erectorSpinaeLeft('erector_spinae_l'),
 
   // shoulders / traps / delts
   lateralDeltoidRight('lateral_deltoid_r'),
@@ -1107,6 +1110,21 @@ abstract final class MuscleCatalog {
       group: .back,
       side: .left,
       aliases: <String>['rotator cuff', 'teres minor'],
+    ),
+    // Paraspinal trunk extensor (2026-05-26 v0.1.4+6).
+    MuscleInfo(
+      muscle: .erectorSpinaeRight,
+      displayName: 'Erector Spinae — Right',
+      group: .back,
+      side: .right,
+      aliases: <String>['spinal erectors', 'back extensors', 'paraspinals'],
+    ),
+    MuscleInfo(
+      muscle: .erectorSpinaeLeft,
+      displayName: 'Erector Spinae — Left',
+      group: .back,
+      side: .left,
+      aliases: <String>['spinal erectors', 'back extensors', 'paraspinals'],
     ),
   ];
 
