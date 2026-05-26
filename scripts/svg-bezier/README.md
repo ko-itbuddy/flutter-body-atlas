@@ -46,6 +46,8 @@ pip3 install --user --break-system-packages svgpathtools
 python3 -m venv .venv && source .venv/bin/activate && pip install svgpathtools
 ```
 
+Windows users (stock Python from python.org — no PEP 668) — `pip install svgpathtools` works as-is in PowerShell or cmd.
+
 ## Reuse
 
 To slice another muscle:
