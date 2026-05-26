@@ -266,10 +266,20 @@
           (v0.1.4+2). Brachialis y range shortened to 305-350 + serratus
           y range shifted to 355-460 to avoid lateral-thorax overlap.
         -->
-        <!-- Serratus anterior (전거근, smooth wave digitations y 355-460) -->
-        <path d="M430 355 Q460 355 465 358 Q468 370 460 375 Q456 380 468 385 Q472 395 460 400 Q456 408 468 415 Q472 425 460 430 Q456 440 468 445 Q472 455 460 458 Q445 460 430 460 Z"
+        <!--
+          Serratus anterior (전거근) — 5-finger interdigitation refinement
+          (2026-05-26 health-customizations v0.1.4+5). Each finger
+          (digitation, 5th-9th rib origin) is a distinct lateral-tip
+          curve with a clear medial valley between. Replaces the
+          v0.1.4+4 single-wave approximation. y range 355-460
+          (5 fingers × ~21px height); x range 430-478 (left),
+          mirror 109-157 (right). Anatomic grade is still
+          prototype-level — true Inkscape interactive refinement is
+          deferred to a future slice.
+        -->
+        <path d="M 430 355 Q 450 355 472 358 C 480 365 478 372 467 372 Q 458 372 451 378 Q 462 381 473 384 C 481 389 479 396 467 396 Q 458 396 451 402 Q 462 405 473 408 C 481 413 479 420 467 420 Q 458 420 451 426 Q 462 429 473 432 C 481 437 479 444 467 444 Q 458 444 452 450 Q 462 453 472 456 C 478 459 472 460 460 460 L 430 460 Z"
               fill="#BDBDBD" id="serratus_anterior_l"/>
-        <path d="M157 355 Q127 355 122 358 Q119 370 127 375 Q131 380 119 385 Q115 395 127 400 Q131 408 119 415 Q115 425 127 430 Q131 440 119 445 Q115 455 127 458 Q142 460 157 460 Z"
+        <path d="M 157 355 Q 137 355 115 358 C 107 365 109 372 120 372 Q 129 372 136 378 Q 125 381 114 384 C 106 389 108 396 120 396 Q 129 396 136 402 Q 125 405 114 408 C 106 413 108 420 120 420 Q 129 420 136 426 Q 125 429 114 432 C 106 437 108 444 120 444 Q 129 444 135 450 Q 125 453 115 456 C 109 459 115 460 127 460 L 157 460 Z"
               fill="#BDBDBD" id="serratus_anterior_r"/>
         <!-- Brachialis (상완근, narrow strip y 305-350, biceps long head medial offset) -->
         <path d="M432 305 C438 305 444 312 446 322 C448 333 446 343 444 348 C442 351 436 351 430 348 C425 343 423 333 422 325 C421 315 422 308 432 305 Z"
