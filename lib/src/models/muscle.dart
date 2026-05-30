@@ -10,10 +10,20 @@ enum Muscle implements AtlasElement {
   semitendinosusLeft('semitendinosus_l'),
   bicepsFemorisLeft('biceps_femoris_l'),
   bicepsFemorisRight('biceps_femoris_r'),
+  // Biceps femoris long head — proximal portion of biceps_femoris
+  // (2026-05-30 health-customizations v0.1.4+7).
+  bicepsFemorisLongHeadRight('biceps_femoris_long_head_r'),
+  bicepsFemorisLongHeadLeft('biceps_femoris_long_head_l'),
   iliotibialTractRight('iliotibial_tract_r'),
   iliotibialTractLeft('iliotibial_tract_l'),
   gastrocnemiusRight('gastrocnemius_r'),
   gastrocnemiusLeft('gastrocnemius_l'),
+  // Gastrocnemius medial head + soleus — deeper calf subdivisions
+  // (2026-05-30 health-customizations v0.1.4+7).
+  gastrocnemiusMedialHeadRight('gastrocnemius_medial_head_r'),
+  gastrocnemiusMedialHeadLeft('gastrocnemius_medial_head_l'),
+  soleusRight('soleus_r'),
+  soleusLeft('soleus_l'),
   tibialisAnteriorLeft('tibialis_anterior_l'),
   tibialisAnteriorRight('tibialis_anterior_r'),
   extensorHallucisLongusLeft('extensor_hallucis_longus_l'),
@@ -40,6 +50,10 @@ enum Muscle implements AtlasElement {
   gluteusMedius1Left('gluteus_medius_1_l'),
   gluteusMaximusRight('gluteus_maximus_r'),
   gluteusMaximusLeft('gluteus_maximus_l'),
+  // Piriformis — deep external rotator under gluteus_maximus
+  // (2026-05-30 health-customizations v0.1.4+7).
+  piriformisRight('piriformis_r'),
+  piriformisLeft('piriformis_l'),
 
   // trunk
   externalObliqueRight('external_oblique_r'),
@@ -87,6 +101,10 @@ enum Muscle implements AtlasElement {
   tricepsBrachiiCaputMedialeLeft('triceps_brachii_caput_mediale_l'),
   flexorDigitorumSuperficialisLeft('flexor_digitorum_superficialis_l'),
   flexorDigitorumSuperficialisRight('flexor_digitorum_superficialis_r'),
+  // Flexor digitorum profundus — deep forearm flexor under FDS
+  // (2026-05-30 health-customizations v0.1.4+7).
+  flexorDigitorumProfundusLeft('flexor_digitorum_profundus_l'),
+  flexorDigitorumProfundusRight('flexor_digitorum_profundus_r'),
   pronatorQuadratusLeft('pronator_quadratus_l'),
   pronatorQuadratusRight('pronator_quadratus_r'),
   extensorCarpiRadialisLongusLeft('extensor_carpi_radialis_longus_l'),
@@ -107,6 +125,11 @@ enum Muscle implements AtlasElement {
   sternocleidomastoidLeft('sternocleidomastoid_l'),
   platysma('platysma'),
   sternohyoid('sternohyoid'),
+  // neck subdivisions (2026-05-30 health-customizations v0.1.4+7).
+  spleniusCapitisRight('splenius_capitis_r'),
+  spleniusCapitisLeft('splenius_capitis_l'),
+  scalenusAnteriorRight('scalenus_anterior_r'),
+  scalenusAnteriorLeft('scalenus_anterior_l'),
 
   // back
   infraspinatusRight('infraspinatus_r'),
@@ -129,6 +152,12 @@ enum Muscle implements AtlasElement {
   // Paraspinal trunk extensor (2026-05-26 health-customizations v0.1.4+6).
   erectorSpinaeRight('erector_spinae_r'),
   erectorSpinaeLeft('erector_spinae_l'),
+  // Rhomboids — scapular retractors under trapezius_middle
+  // (2026-05-30 health-customizations v0.1.4+7).
+  rhomboidMajorRight('rhomboid_major_r'),
+  rhomboidMajorLeft('rhomboid_major_l'),
+  rhomboidMinorRight('rhomboid_minor_r'),
+  rhomboidMinorLeft('rhomboid_minor_l'),
 
   // shoulders / traps / delts
   lateralDeltoidRight('lateral_deltoid_r'),
@@ -333,6 +362,21 @@ abstract final class MuscleCatalog {
       side: .left,
       aliases: <String>['biceps femoris', 'hamstring'],
     ),
+    // Biceps femoris long head (2026-05-30 v0.1.4+7).
+    MuscleInfo(
+      muscle: .bicepsFemorisLongHeadRight,
+      displayName: 'Biceps Femoris (Long Head) — Right',
+      group: .hamstrings,
+      side: .right,
+      aliases: <String>['biceps femoris long', 'hamstring', 'long head'],
+    ),
+    MuscleInfo(
+      muscle: .bicepsFemorisLongHeadLeft,
+      displayName: 'Biceps Femoris (Long Head) — Left',
+      group: .hamstrings,
+      side: .left,
+      aliases: <String>['biceps femoris long', 'hamstring', 'long head'],
+    ),
   ];
 
   static const legs = <MuscleInfo>[
@@ -363,6 +407,35 @@ abstract final class MuscleCatalog {
       group: .legs,
       side: .left,
       aliases: <String>['calf'],
+    ),
+    // Gastrocnemius medial head + soleus (2026-05-30 v0.1.4+7).
+    MuscleInfo(
+      muscle: .gastrocnemiusMedialHeadRight,
+      displayName: 'Gastrocnemius (Medial Head) — Right',
+      group: .legs,
+      side: .right,
+      aliases: <String>['calf', 'medial gastroc'],
+    ),
+    MuscleInfo(
+      muscle: .gastrocnemiusMedialHeadLeft,
+      displayName: 'Gastrocnemius (Medial Head) — Left',
+      group: .legs,
+      side: .left,
+      aliases: <String>['calf', 'medial gastroc'],
+    ),
+    MuscleInfo(
+      muscle: .soleusRight,
+      displayName: 'Soleus — Right',
+      group: .legs,
+      side: .right,
+      aliases: <String>['calf', 'deep calf'],
+    ),
+    MuscleInfo(
+      muscle: .soleusLeft,
+      displayName: 'Soleus — Left',
+      group: .legs,
+      side: .left,
+      aliases: <String>['calf', 'deep calf'],
     ),
     MuscleInfo(
       muscle: .tibialisAnteriorLeft,
@@ -550,6 +623,21 @@ abstract final class MuscleCatalog {
       group: .glutes,
       side: .left,
       aliases: <String>['glute med', 'glute'],
+    ),
+    // Piriformis — deep external rotator (2026-05-30 v0.1.4+7).
+    MuscleInfo(
+      muscle: .piriformisRight,
+      displayName: 'Piriformis — Right',
+      group: .glutes,
+      side: .right,
+      aliases: <String>['piriformis', 'deep glute', 'external rotator'],
+    ),
+    MuscleInfo(
+      muscle: .piriformisLeft,
+      displayName: 'Piriformis — Left',
+      group: .glutes,
+      side: .left,
+      aliases: <String>['piriformis', 'deep glute', 'external rotator'],
     ),
   ];
 
@@ -860,6 +948,21 @@ abstract final class MuscleCatalog {
       side: .right,
       aliases: <String>['forearm flexor'],
     ),
+    // Flexor digitorum profundus — deep forearm flexor (2026-05-30 v0.1.4+7).
+    MuscleInfo(
+      muscle: .flexorDigitorumProfundusLeft,
+      displayName: 'Flexor Digitorum Profundus — Left',
+      group: .arms,
+      side: .left,
+      aliases: <String>['forearm flexor', 'deep flexor', 'FDP'],
+    ),
+    MuscleInfo(
+      muscle: .flexorDigitorumProfundusRight,
+      displayName: 'Flexor Digitorum Profundus — Right',
+      group: .arms,
+      side: .right,
+      aliases: <String>['forearm flexor', 'deep flexor', 'FDP'],
+    ),
     MuscleInfo(
       muscle: .pronatorQuadratusLeft,
       displayName: 'Pronator Quadratus — Left',
@@ -1005,6 +1108,35 @@ abstract final class MuscleCatalog {
       side: .none,
       aliases: <String>['neck'],
     ),
+    // Splenius capitis + scalenus anterior (2026-05-30 v0.1.4+7).
+    MuscleInfo(
+      muscle: .spleniusCapitisRight,
+      displayName: 'Splenius Capitis — Right',
+      group: .neck,
+      side: .right,
+      aliases: <String>['splenius', 'neck extensor'],
+    ),
+    MuscleInfo(
+      muscle: .spleniusCapitisLeft,
+      displayName: 'Splenius Capitis — Left',
+      group: .neck,
+      side: .left,
+      aliases: <String>['splenius', 'neck extensor'],
+    ),
+    MuscleInfo(
+      muscle: .scalenusAnteriorRight,
+      displayName: 'Scalenus Anterior — Right',
+      group: .neck,
+      side: .right,
+      aliases: <String>['scalene', 'neck flexor'],
+    ),
+    MuscleInfo(
+      muscle: .scalenusAnteriorLeft,
+      displayName: 'Scalenus Anterior — Left',
+      group: .neck,
+      side: .left,
+      aliases: <String>['scalene', 'neck flexor'],
+    ),
   ];
 
   static const back = <MuscleInfo>[
@@ -1125,6 +1257,35 @@ abstract final class MuscleCatalog {
       group: .back,
       side: .left,
       aliases: <String>['spinal erectors', 'back extensors', 'paraspinals'],
+    ),
+    // Rhomboids — scapular retractors (2026-05-30 v0.1.4+7).
+    MuscleInfo(
+      muscle: .rhomboidMajorRight,
+      displayName: 'Rhomboid Major — Right',
+      group: .back,
+      side: .right,
+      aliases: <String>['rhomboid', 'scapular retractor'],
+    ),
+    MuscleInfo(
+      muscle: .rhomboidMajorLeft,
+      displayName: 'Rhomboid Major — Left',
+      group: .back,
+      side: .left,
+      aliases: <String>['rhomboid', 'scapular retractor'],
+    ),
+    MuscleInfo(
+      muscle: .rhomboidMinorRight,
+      displayName: 'Rhomboid Minor — Right',
+      group: .back,
+      side: .right,
+      aliases: <String>['rhomboid', 'scapular retractor'],
+    ),
+    MuscleInfo(
+      muscle: .rhomboidMinorLeft,
+      displayName: 'Rhomboid Minor — Left',
+      group: .back,
+      side: .left,
+      aliases: <String>['rhomboid', 'scapular retractor'],
     ),
   ];
 

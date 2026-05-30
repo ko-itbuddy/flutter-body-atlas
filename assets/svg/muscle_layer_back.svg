@@ -201,6 +201,81 @@
               fill="#BDBDBD" id="erector_spinae_r"/>
         <path d="M 299 445 L 315 445 L 325 720 L 299 720 Z"
               fill="#BDBDBD" id="erector_spinae_l"/>
+        <!--
+          Rhomboids (능형근, 2026-05-30 health-customizations v0.1.4+7).
+          Diamond-shaped wedge between scapula medial border and thoracic
+          spine. Rhomboid major (lower, larger) and minor (upper, narrow)
+          both under trapezius_middle. Polygon approximations using
+          adjacent-path bounding-box hints (trapezius_middle inner edge
+          x~297-355 on right, x~241-299 on left; spine midline x~298;
+          y range major=215-275, minor=195-215). Anatomic-grade Inkscape
+          refinement deferred. Right side uses x_r = 596 - x_l mirror.
+        -->
+        <path d="M 297 215 L 348 220 L 343 275 L 297 270 Z"
+              fill="#BDBDBD" id="rhomboid_major_r"/>
+        <path d="M 248 220 L 299 215 L 299 270 L 253 275 Z"
+              fill="#BDBDBD" id="rhomboid_major_l"/>
+        <path d="M 297 195 L 340 200 L 348 215 L 297 213 Z"
+              fill="#BDBDBD" id="rhomboid_minor_r"/>
+        <path d="M 256 200 L 299 195 L 299 213 L 248 215 Z"
+              fill="#BDBDBD" id="rhomboid_minor_l"/>
+        <!--
+          Splenius capitis (두판상근, 2026-05-30 v0.1.4+7).
+          Upper-posterior neck strap on either side of cervical spine.
+          Wraps under upper trapezius / lateral to sternocleidomastoid
+          posterior view. Polygon approximation, y range 95-160, x at
+          sides of midline (298). Anatomic-grade Inkscape refinement
+          deferred.
+        -->
+        <path d="M 303 95 L 332 105 L 332 160 L 303 155 Z"
+              fill="#BDBDBD" id="splenius_capitis_r"/>
+        <path d="M 264 105 L 293 95 L 293 155 L 264 160 Z"
+              fill="#BDBDBD" id="splenius_capitis_l"/>
+        <!--
+          Piriformis (이상근, 2026-05-30 v0.1.4+7).
+          Deep external rotator under gluteus_maximus. Triangular wedge
+          from sacrum (medial) to greater trochanter (lateral). Approx
+          y range 490-525. Polygon approximation — deep muscle, no
+          surface contour in 2D atlas. Anatomic-grade refinement deferred.
+        -->
+        <path d="M 305 490 L 355 510 L 345 525 L 305 510 Z"
+              fill="#BDBDBD" id="piriformis_r"/>
+        <path d="M 241 510 L 291 490 L 291 510 L 251 525 Z"
+              fill="#BDBDBD" id="piriformis_l"/>
+        <!--
+          Biceps femoris long head (대퇴이두근 장두, 2026-05-30 v0.1.4+7).
+          Upper/proximal portion of biceps_femoris (the larger of its 2
+          heads, originating from ischial tuberosity). Polygon subset of
+          parent biceps_femoris path bounding box (y 605-720). Anatomic
+          refinement vs short head deferred — short head not yet added.
+        -->
+        <path d="M 364 612 L 397 612 L 396 720 L 365 720 Z"
+              fill="#BDBDBD" id="biceps_femoris_long_head_r"/>
+        <path d="M 199 612 L 232 612 L 231 720 L 200 720 Z"
+              fill="#BDBDBD" id="biceps_femoris_long_head_l"/>
+        <!--
+          Soleus (가자미근, 2026-05-30 v0.1.4+7).
+          Deep calf muscle under gastrocnemius. Visible bilateral strip
+          along the lower calf below gastro insertion. Polygon
+          approximation y 870-970, slightly wider than gastrocnemius
+          lower portion to suggest soleus borders visible beside the
+          gastrocnemius. Anatomic-grade refinement deferred.
+        -->
+        <path d="M 333 870 L 372 870 L 380 970 L 328 970 Z"
+              fill="#BDBDBD" id="soleus_r"/>
+        <path d="M 224 870 L 263 870 L 268 970 L 216 970 Z"
+              fill="#BDBDBD" id="soleus_l"/>
+        <!--
+          Gastrocnemius medial head (비복근 내측두, 2026-05-30 v0.1.4+7).
+          Medial half of the existing gastrocnemius path. Polygon subset
+          covering the medial bulk (closer to midline). y range 793-870
+          (upper calf), x ranges chosen to occupy inner half of parent
+          path bounding box. Lateral head split deferred.
+        -->
+        <path d="M 341 793 L 369 790 L 367 870 L 333 870 Z"
+              fill="#BDBDBD" id="gastrocnemius_medial_head_r"/>
+        <path d="M 227 790 L 255 793 L 263 870 L 229 870 Z"
+              fill="#BDBDBD" id="gastrocnemius_medial_head_l"/>
     </g>
 
     <g id="shoulders">
