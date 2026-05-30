@@ -211,9 +211,19 @@
           y range major=215-275, minor=195-215). Anatomic-grade Inkscape
           refinement deferred. Right side uses x_r = 596 - x_l mirror.
         -->
-        <path d="M 297 215 L 348 220 L 343 275 L 297 270 Z"
+        <!--
+          rhomboid_major: anatomic refinement (2026-05-30 v0.1.4+8).
+          Parallelogram with infero-lateral fiber direction (T2-T5 spine
+          origin → medial scapular border insertion). Medial edge along
+          spine (x=297) is straight-vertical; lateral edge runs from
+          high-lateral (348,220) to low-medial (343,275) approximating
+          scapular medial border. Top/bottom edges use gentle C curves
+          to soften the polygon look. Right side; left mirrors via
+          x_l = 596 - x_r.
+        -->
+        <path d="M 297 215 C 312 216 332 218 348 220 C 348 235 346 255 344 270 C 327 271 312 270 297 270 C 297 252 297 233 297 215 Z"
               fill="#BDBDBD" id="rhomboid_major_r"/>
-        <path d="M 248 220 L 299 215 L 299 270 L 253 275 Z"
+        <path d="M 299 215 C 284 216 264 218 248 220 C 248 235 250 255 252 270 C 269 271 284 270 299 270 C 299 252 299 233 299 215 Z"
               fill="#BDBDBD" id="rhomboid_major_l"/>
         <path d="M 297 195 L 340 200 L 348 215 L 297 213 Z"
               fill="#BDBDBD" id="rhomboid_minor_r"/>
@@ -249,9 +259,18 @@
           parent biceps_femoris path bounding box (y 605-720). Anatomic
           refinement vs short head deferred — short head not yet added.
         -->
-        <path d="M 364 612 L 397 612 L 396 720 L 365 720 Z"
+        <!--
+          biceps_femoris_long_head: anatomic refinement (2026-05-30 v0.1.4+8).
+          Teardrop occupying lateral proximal half of posterior thigh.
+          Narrower at ischial origin (y=612), bulging at mid-belly (y=665),
+          tapering toward popliteal area (y=720) where short head would join.
+          Sits within parent biceps_femoris bounding box; lateral edge
+          (high x on R, low x on L) follows iliotibial border; medial edge
+          abuts semitendinosus path. Right side; left mirrors.
+        -->
+        <path d="M 369 612 C 380 612 391 614 397 618 C 399 638 398 660 397 682 C 395 698 391 711 386 720 C 376 720 369 720 365 720 C 365 705 365 685 366 665 C 366 645 367 625 369 612 Z"
               fill="#BDBDBD" id="biceps_femoris_long_head_r"/>
-        <path d="M 199 612 L 232 612 L 231 720 L 200 720 Z"
+        <path d="M 227 612 C 216 612 205 614 199 618 C 197 638 198 660 199 682 C 201 698 205 711 210 720 C 220 720 227 720 231 720 C 231 705 231 685 230 665 C 230 645 229 625 227 612 Z"
               fill="#BDBDBD" id="biceps_femoris_long_head_l"/>
         <!--
           Soleus (가자미근, 2026-05-30 v0.1.4+7).
@@ -261,9 +280,18 @@
           lower portion to suggest soleus borders visible beside the
           gastrocnemius. Anatomic-grade refinement deferred.
         -->
-        <path d="M 333 870 L 372 870 L 380 970 L 328 970 Z"
+        <!--
+          soleus: anatomic refinement (2026-05-30 v0.1.4+8).
+          Tapered oval/spindle below gastrocnemius diamond. Narrower
+          at top (~y=870, just below gastro medial/lateral split),
+          widest at mid-belly (~y=915), narrowing toward the Achilles
+          tendon insertion (~y=965). Lateral edge bows outward (visible
+          beside gastrocnemius lateral head); medial edge mirrors.
+          Right side; left mirrors via x_l = 596 - x_r.
+        -->
+        <path d="M 338 870 C 350 870 363 871 372 873 C 378 895 382 925 380 955 C 378 962 372 968 360 970 C 348 971 336 970 328 968 C 326 945 327 920 330 895 C 332 885 335 877 338 870 Z"
               fill="#BDBDBD" id="soleus_r"/>
-        <path d="M 224 870 L 263 870 L 268 970 L 216 970 Z"
+        <path d="M 258 870 C 246 870 233 871 224 873 C 218 895 214 925 216 955 C 218 962 224 968 236 970 C 248 971 260 970 268 968 C 270 945 269 920 266 895 C 264 885 261 877 258 870 Z"
               fill="#BDBDBD" id="soleus_l"/>
         <!--
           Gastrocnemius medial head (비복근 내측두, 2026-05-30 v0.1.4+7).
