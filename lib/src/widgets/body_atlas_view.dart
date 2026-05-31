@@ -122,23 +122,25 @@ class _BodyAtlasViewState<I extends AtlasElementInfo> extends State<BodyAtlasVie
           builder: (context, snapshot) {
             final tester = snapshot.data;
 
-            final svg = SvgAsset(
-              path: widget.view.path,
-              colorMapper: (id, color) {
-                final hoverColor = widget.hoverColor?.call(color) ?? colorScheme.secondary;
-                if (id == null) return null;
-
-                final info = widget.resolver.tryById(id);
-                if (info == null) return null;
-
-                final highlighted = widget.colorMapping?[info];
-                if (highlighted != null) return highlighted;
-
-                final hovered = widget.hoveredOver;
-                if (hovered != null && identical(info, hovered)) return hoverColor;
-
-                return null;
-              },
+            // Release-mode bug history: this used to be `SvgAsset(...)` with
+            // a closure colorMapper that captured `widget`, `colorScheme`,
+            // and the surrounding `_BodyAtlasViewState`. On Android release
+            // (vector_graphics 2.0.34+) SVG decode crosses an isolate boundary
+            // and SendPort rejects unsendable closures — atlas silently
+            // failed to render on physical devices (Galaxy S25 v10-v17 log:
+            // "Illegal argument in isolate message: object is unsendable").
+            // Fix: concrete `ColorMapper` subclass with only Sendable fields.
+            final svg = SvgPicture.asset(
+              widget.view.path,
+              package: AtlasAsset.package,
+              fit: BoxFit.contain,
+              alignment: Alignment.center,
+              colorMapper: _BodyAtlasColorMapper<I>(
+                resolver: widget.resolver,
+                colorMapping: widget.colorMapping,
+                hoveredOver: widget.hoveredOver,
+                defaultHoverColor: colorScheme.secondary,
+              ),
             );
 
             Widget interactiveChild = GestureDetector(
@@ -202,4 +204,45 @@ class _BodyAtlasViewState<I extends AtlasElementInfo> extends State<BodyAtlasVie
 
 extension on GlobalKey {
   RenderBox? get box => currentContext?.findRenderObject() as RenderBox?;
+}
+
+/// Isolate-safe `ColorMapper` for the body atlas. Fields are immutable
+/// Sendable values (no captured closures, no widget/state references), so
+/// vector_graphics' SendPort-based isolate decode can transport this object
+/// without `Illegal argument in isolate message: object is unsendable`.
+///
+/// `hoverColor` (the per-element color-derivation closure on `BodyAtlasView`)
+/// is intentionally NOT plumbed here — closures cross isolate boundaries
+/// poorly. Hover falls back to the theme `colorScheme.secondary` captured at
+/// build time as `defaultHoverColor`. Apps that need custom hover color
+/// derivation should fork this class.
+class _BodyAtlasColorMapper<I extends AtlasElementInfo> extends ColorMapper {
+  const _BodyAtlasColorMapper({
+    required this.resolver,
+    required this.colorMapping,
+    required this.hoveredOver,
+    required this.defaultHoverColor,
+  });
+
+  final AtlasResolver<I> resolver;
+  final Map<I, Color?>? colorMapping;
+  final I? hoveredOver;
+  final Color defaultHoverColor;
+
+  @override
+  Color substitute(
+    String? id,
+    String elementName,
+    String attributeName,
+    Color color,
+  ) {
+    if (id == null) return color;
+    final info = resolver.tryById(id);
+    if (info == null) return color;
+    final highlighted = colorMapping?[info];
+    if (highlighted != null) return highlighted;
+    final hovered = hoveredOver;
+    if (hovered != null && identical(info, hovered)) return defaultHoverColor;
+    return color;
+  }
 }
