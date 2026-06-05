@@ -197,9 +197,9 @@
           sacrum (lateral edge x 270/325 at y=720). Polygon prototype;
           anatomic-grade Inkscape refinement deferred.
         -->
-        <path d="M 296 442 L 282 447 L 274 560 L 278 645 L 288 705 L 296 705 Z"
+        <path d="M 295 342 Q 278 345 271 364 Q 266 400 271 430 Q 278 450 291 452 L 295 452 Z"
               fill="#BDBDBD" id="erector_spinae_r"/>
-        <path d="M 300 442 L 314 447 L 322 560 L 318 645 L 308 705 L 300 705 Z"
+        <path d="M 301 342 Q 318 345 325 364 Q 330 400 325 430 Q 318 450 305 452 L 301 452 Z"
               fill="#BDBDBD" id="erector_spinae_l"/>
         <!--
           Rhomboids (능형근, 2026-05-30 health-customizations v0.1.4+7).
