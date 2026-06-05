@@ -225,9 +225,9 @@
               fill="#BDBDBD" id="rhomboid_major_r"/>
         <path d="M 299 215 C 284 216 264 218 248 220 C 248 235 250 255 252 270 C 269 271 284 270 299 270 C 299 252 299 233 299 215 Z"
               fill="#BDBDBD" id="rhomboid_major_l"/>
-        <path d="M 297 195 L 340 200 L 348 215 L 297 213 Z"
+        <path d="M 298 196 L 340 202 Q 348 205 346 212 L 300 207 Q 295 201 298 196 Z"
               fill="#BDBDBD" id="rhomboid_minor_r"/>
-        <path d="M 256 200 L 299 195 L 299 213 L 248 215 Z"
+        <path d="M 298 196 L 256 202 Q 248 205 250 212 L 296 207 Q 301 201 298 196 Z"
               fill="#BDBDBD" id="rhomboid_minor_l"/>
         <!--
           Splenius capitis (두판상근, 2026-05-30 v0.1.4+7).
@@ -237,9 +237,9 @@
           sides of midline (298). Anatomic-grade Inkscape refinement
           deferred.
         -->
-        <path d="M 303 95 L 332 105 L 332 160 L 303 155 Z"
+        <path d="M 306 98 Q 301 120 306 150 Q 312 160 322 156 Q 330 130 328 105 Q 318 96 306 98 Z"
               fill="#BDBDBD" id="splenius_capitis_r"/>
-        <path d="M 264 105 L 293 95 L 293 155 L 264 160 Z"
+        <path d="M 290 98 Q 295 120 290 150 Q 284 160 274 156 Q 266 130 268 105 Q 278 96 290 98 Z"
               fill="#BDBDBD" id="splenius_capitis_l"/>
         <!--
           Piriformis (이상근, 2026-05-30 v0.1.4+7).
@@ -248,9 +248,9 @@
           y range 490-525. Polygon approximation — deep muscle, no
           surface contour in 2D atlas. Anatomic-grade refinement deferred.
         -->
-        <path d="M 305 490 L 355 510 L 345 525 L 305 510 Z"
+        <path d="M 308 492 Q 301 500 311 508 Q 331 520 346 524 Q 354 520 350 512 Q 330 500 308 492 Z"
               fill="#BDBDBD" id="piriformis_r"/>
-        <path d="M 241 510 L 291 490 L 291 510 L 251 525 Z"
+        <path d="M 288 492 Q 295 500 285 508 Q 265 520 250 524 Q 242 520 246 512 Q 266 500 288 492 Z"
               fill="#BDBDBD" id="piriformis_l"/>
         <!--
           Biceps femoris long head (대퇴이두근 장두, 2026-05-30 v0.1.4+7).

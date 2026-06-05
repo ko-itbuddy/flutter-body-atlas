@@ -320,9 +320,9 @@
           approximation y 150-195. Anatomic-grade Inkscape refinement
           deferred.
         -->
-        <path d="M 333 150 L 348 165 L 345 195 L 332 195 Z"
+        <path d="M 340 152 Q 348 165 346 185 Q 343 196 336 193 Q 331 178 333 160 Q 335 151 340 152 Z"
               fill="#BDBDBD" id="scalenus_anterior_l"/>
-        <path d="M 263 150 L 248 165 L 251 195 L 264 195 Z"
+        <path d="M 256 152 Q 248 165 250 185 Q 253 196 260 193 Q 265 178 263 160 Q 261 151 256 152 Z"
               fill="#BDBDBD" id="scalenus_anterior_r"/>
     </g>
 
