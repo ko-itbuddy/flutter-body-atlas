@@ -108,9 +108,9 @@
           box (mid-forearm strip y 455-515). Anatomic-grade Inkscape
           refinement deferred — deep muscle, no clean surface contour.
         -->
-        <path d="M 70 490 L 95 460 L 115 470 L 110 510 L 80 510 Z"
+        <path d="M 84 456 Q 72 472 78 496 Q 86 512 100 506 Q 111 497 107 476 Q 100 458 84 456 Z"
               fill="#BDBDBD" id="flexor_digitorum_profundus_r"/>
-        <path d="M 526 490 L 501 460 L 481 470 L 486 510 L 516 510 Z"
+        <path d="M 512 456 Q 524 472 518 496 Q 510 512 496 506 Q 485 497 489 476 Q 496 458 512 456 Z"
               fill="#BDBDBD" id="flexor_digitorum_profundus_l"/>
         <path d="M82 511.75C74.9167 508.584 58.525 502.825 49.625 505.125L46.5 513.125L56.125 514.75L64.75 517.5L72.125 520.5L79.875 525L82.875 530L87.625 517.5L82 511.75Z"
               fill="#E0E0E0" id="pronator_quadratus_r"/>

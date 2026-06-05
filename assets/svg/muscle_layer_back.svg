@@ -197,9 +197,9 @@
           sacrum (lateral edge x 270/325 at y=720). Polygon prototype;
           anatomic-grade Inkscape refinement deferred.
         -->
-        <path d="M 280 445 L 296 445 L 296 720 L 270 720 Z"
+        <path d="M 296 442 L 282 447 L 274 560 L 278 645 L 288 705 L 296 705 Z"
               fill="#BDBDBD" id="erector_spinae_r"/>
-        <path d="M 299 445 L 315 445 L 325 720 L 299 720 Z"
+        <path d="M 300 442 L 314 447 L 322 560 L 318 645 L 308 705 L 300 705 Z"
               fill="#BDBDBD" id="erector_spinae_l"/>
         <!--
           Rhomboids (능형근, 2026-05-30 health-customizations v0.1.4+7).
@@ -300,9 +300,9 @@
           (upper calf), x ranges chosen to occupy inner half of parent
           path bounding box. Lateral head split deferred.
         -->
-        <path d="M 341 793 L 369 790 L 367 870 L 333 870 Z"
+        <path d="M 366 788 Q 344 790 338 812 Q 332 842 344 868 Q 358 874 364 858 Q 370 824 366 788 Z"
               fill="#BDBDBD" id="gastrocnemius_medial_head_r"/>
-        <path d="M 227 790 L 255 793 L 263 870 L 229 870 Z"
+        <path d="M 230 788 Q 252 790 258 812 Q 264 842 252 868 Q 238 874 232 858 Q 226 824 230 788 Z"
               fill="#BDBDBD" id="gastrocnemius_medial_head_l"/>
     </g>
 
